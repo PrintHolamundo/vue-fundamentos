@@ -1,5 +1,5 @@
 <template>
-  <h2>Counter</h2>
+  <h2>{{ customTitles }}</h2>
   <p>{{ counter }} <sup>2</sup> = {{ counter * counter }}</p>
   <div>
     <button @click="counter--">-1</button>
@@ -9,6 +9,7 @@
 
 <script>
 export default {
+  props: ['title'],
   // name: "counter",
   data() {
     return {
@@ -24,8 +25,11 @@ export default {
     squareCounter() {
       return this.counter * this.counter;
     },
-  },
-};
+    customTitles() {
+      return this.title || 'Counter';
+    },
+    }
+  }
 </script>
 
 
