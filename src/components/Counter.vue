@@ -10,11 +10,14 @@
 <script>
 export default {
   props: {
-    title:String,
-    start:{
-      type:Number,
-      required:true,
-      default:10
+    title: String,
+    start: {
+      type: Number,
+      required: true,
+      default: 10,
+      validator(value) {
+        return value >= 0;
+      },
     },
   },
   // name: "counter",
