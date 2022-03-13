@@ -9,11 +9,18 @@
 
 <script>
 export default {
-  props: ['title'],
+  props: {
+    title:String,
+    start:{
+      type:Number,
+      required:true,
+      default:10
+    },
+  },
   // name: "counter",
   data() {
     return {
-      counter: 5,
+      counter: this.start,
     };
   },
   methods: {
@@ -26,30 +33,28 @@ export default {
       return this.counter * this.counter;
     },
     customTitles() {
-      return this.title || 'Counter';
+      return this.title || "Counter";
     },
-    }
-  }
+  },
+};
 </script>
 
 
 <style>
-
-button{
- background-color: #64bb87;
- border-radius: 5px;
- border: 1px solid #fff;
- color: #fff;
- cursor: pointer;
- margin: 0 5px;
- padding: 5px 15px;
- transition: 0,3s ease-in-out;
+button {
+  background-color: #64bb87;
+  border-radius: 5px;
+  border: 1px solid #fff;
+  color: #fff;
+  cursor: pointer;
+  margin: 0 5px;
+  padding: 5px 15px;
+  transition: 0, 3s ease-in-out;
 }
 
-button:hover{
+button:hover {
   background-color: #fff;
   color: #64bb87;
   border: 1px solid #64bb87;
 }
-
 </style>
